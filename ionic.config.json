@@ -1,0 +1,8 @@
+{
+  "name": "admincuentas",
+  "app_id": "cc6c9cdd",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
