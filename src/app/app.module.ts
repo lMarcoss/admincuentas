@@ -3,17 +3,23 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { HomeComponent } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CuentasPorCobrarComponent } from "../pages/accounts/cobrar/cuentasporcobrar";
+import { ContactosComponent } from "../pages/contactos/contactos";
+import { CuentasporpagarComponent } from "../pages/accounts/pagar/cuentasporpagar";
+import { AddaccountComponent } from "../pages/accounts/addaccount/addaccount";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    HomeComponent,
+    ContactosComponent,
+    CuentasPorCobrarComponent,
+    CuentasporpagarComponent,
+    AddaccountComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +28,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    HomeComponent,
+    ContactosComponent,
+    CuentasPorCobrarComponent,
+    CuentasporpagarComponent,
+    AddaccountComponent
   ],
   providers: [
     StatusBar,
