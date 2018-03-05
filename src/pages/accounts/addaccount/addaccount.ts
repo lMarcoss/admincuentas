@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the AddaccountPage page.
@@ -8,7 +7,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'app-addaccount',
   templateUrl: 'addaccount.html',

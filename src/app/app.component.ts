@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomeComponent } from '../pages/home/home';
-import {CuentasPorCobrarComponent } from "../pages/accounts/cobrar/cuentasporcobrar";
-import { ContactosComponent } from "../pages/contactos/contactos";
-import {CuentasporpagarComponent} from "../pages/accounts/pagar/cuentasporpagar";
-import {AddaccountComponent} from "../pages/accounts/addaccount/addaccount";
+import { CuentasPorCobrarComponent } from "../pages/accounts/cobrar/cuentasporcobrar";
+import { ContactsComponent } from "../pages/contacts/contacts";
+import { CuentasporpagarComponent } from "../pages/accounts/pagar/cuentasporpagar";
+import { AddaccountComponent } from "../pages/accounts/addaccount/addaccount";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,18 +17,18 @@ export class MyApp {
 
   rootPage: any = HomeComponent;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon:string, md_icon:string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomeComponent },
-      { title: 'Contactos', component: ContactosComponent },
-      { title: 'Cuentas por cobrar', component: CuentasPorCobrarComponent },
-      { title: 'Cuentas por pagar', component: CuentasporpagarComponent },
-      { title: 'Registrar', component: AddaccountComponent }
+      { title: 'Home', icon: 'ios-home-outline', md_icon:'ios-home', component: HomeComponent },
+      { title: 'Contactos', icon: 'ios-contacts-outline', md_icon:'md-contacts', component: ContactsComponent },
+      { title: 'Cuentas por cobrar', icon: 'ios-cash-outline', md_icon:'md-card', component: CuentasPorCobrarComponent },
+      { title: 'Cuentas por pagar', icon: 'ios-card', md_icon:'md-cash', component: CuentasporpagarComponent },
+      { title: 'Registrar', icon: 'ios-add-circle-outline', md_icon:'md-add-circle', component: AddaccountComponent }
     ];
 
   }

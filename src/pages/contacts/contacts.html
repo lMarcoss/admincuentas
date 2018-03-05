@@ -14,5 +14,13 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let contacto of contactos" (click)="showDetailContact(contacto)">
+      {{ contacto.name }}
+    </button>
+  </ion-list>
 
+  <div padding>
+    <button ion-button full (click)="addContact()">Agregar</button>
+  </div>
 </ion-content>
