@@ -7,13 +7,7 @@ export class ContactsService{
   contacts: Contact[] = [];
 
   constructor () {
-    let contacto1 = new Contact(this.getNewIdContact(), 'Leonardo Marcos', '9512361144', 'marcossleo2@gmail.com');
-    this.contacts.push(contacto1);
-    let contacto2 = new Contact(this.getNewIdContact() , 'Marcos Santiago', '9512361144', 'marcossleo2@gmail.com');
-    this.contacts.push(contacto2);
-    let contacto3 = new Contact(this.getNewIdContact(), 'Santiago', '9512361144', 'marcossleo2@gmail.com');
-    this.contacts.push(contacto3);
-
+    this.getContactOfLocalStorage();
     console.log(this.contacts);
   }
 
@@ -27,11 +21,24 @@ export class ContactsService{
 
   addContact(contact: Contact) {
     this.contacts.push(contact);
+    this.saveContactInLocalStorage();
   }
 
   deleteContact(contact: Contact){
     let index = this.contacts.indexOf(contact);
     this.contacts.splice(index, 1);
+
+    this.saveContactInLocalStorage();
   }
 
+  saveContactInLocalStorage(){
+    localStorage.setItem('contactos', JSON.stringify(this.contacts));
+  }
+
+  getContactOfLocalStorage(){
+    if(localStorage.getItem('contactos')){
+      this.contacts = JSON.parse(localStorage.getItem('contactos'));
+    }
+
+  }
 }

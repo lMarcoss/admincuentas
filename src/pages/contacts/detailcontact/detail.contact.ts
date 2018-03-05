@@ -35,8 +35,7 @@ export class DetailContactComponent {
       console.log('edit ',this.contact);
     }
 
-    //mostrar la pantalla de contactos
-    this.navController.push(ContactsComponent);
+    this.changeToViewContacts();
   }
 
   deleteContact(){
@@ -53,12 +52,16 @@ export class DetailContactComponent {
           text: 'Sí',
           handler: () => {
             this._contactsService.deleteContact(this.contact);
-            //mostrar la pantalla de contactos
-            this.navController.push(ContactsComponent);
+            this.changeToViewContacts();
           }
         }
       ]
     });
     confirm.present();
+  }
+
+  changeToViewContacts(){
+    //mostrar la pantalla de contactos
+    this.navController.push(ContactsComponent);
   }
 }
